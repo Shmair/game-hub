@@ -2,7 +2,7 @@ import useGenres from "../hooks/useGenres";
 import { Image, Text, HStack } from "@chakra-ui/react";
 
 const GenreList = () => {
-  const { genres } = useGenres();
+  const { data: genres } = useGenres();
   return (
     <>
       {genres.map((genre) => (
