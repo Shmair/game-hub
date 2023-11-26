@@ -1,10 +1,12 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 function App() {
   return (
     <Grid
+      paddingX={10}
       templateAreas={{
         base: `"nav" "main"`, //on mobile we want only these area
         lg: `"nav nav" "aside main"`, // large devices > 1024px
@@ -14,7 +16,9 @@ function App() {
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside">aside</GridItem>
+        <GridItem area="aside">
+          <GenreList />
+        </GridItem>
       </Show>
       <GridItem area="main">
         <GameGrid />
