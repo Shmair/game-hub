@@ -51,10 +51,6 @@ function App() {
           <SortSelector
             sortOrder={gameQuery.sortOrder}
             onSelectSortOrder={(sortOrder) => {
-              sortOrder =
-                sortOrder.indexOf("-") == 0
-                  ? sortOrder.slice(1)
-                  : "-" + sortOrder;
               setGameQuery({ ...gameQuery, sortOrder });
             }}
           />
