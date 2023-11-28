@@ -31,7 +31,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
               <Image
                 borderRadius={8}
                 paddingY="5px"
-                boxSize="50px"
+                boxSize="32px"
                 objectFit="cover"
                 src={getCroppedImageUrl(genre.image_background)}
               />
