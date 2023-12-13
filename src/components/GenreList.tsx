@@ -15,7 +15,7 @@ interface Props {
   onSelectGenre: (genre: Genre) => void;
 }
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
-  const { data: genres, isLoading, error } = useGenres();
+  const { data, isLoading, error } = useGenres();
   if (error) return null; // not really in use since genres are static
   if (isLoading) return <Spinner />; // not really in use since genres are static
 
@@ -25,7 +25,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
         Genres
       </Heading>
       <List>
-        {genres.map((genre) => (
+        {data.results?.map((genre: Genre) => (
           <ListItem key={genre.id}>
             <HStack>
               <Image

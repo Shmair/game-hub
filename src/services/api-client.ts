@@ -2,6 +2,7 @@ import axios, {AxiosRequestConfig, CanceledError} from 'axios'
 
 export interface FetchResponse<T> {
    count: number;
+   next:string | null
    results: T[];
 }
 
@@ -13,15 +14,18 @@ const axiosInstance =  axios.create({
 })
 
 class ApiClient<T> {
-   endpoint : string
+   endpoint : string;
 
    constructor(endpoint:string) {
       this.endpoint = endpoint;
    }
 
    getAll = (config:AxiosRequestConfig = {}) => 
-      axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then((res)=> res.data.results)
+      axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then((res)=> res.data);
    
+   get = (id: number | string) => 
+      axiosInstance.get<T>(this.endpoint + '/' + id).then((res) => res.data);
+       
 }
 
 export default ApiClient;
