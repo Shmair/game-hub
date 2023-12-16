@@ -13,7 +13,7 @@ const usePlatforms = () => useQuery<FetchResponse<Platform>,Error>({
     queryKey: ["platforms"],
     queryFn: () => platformAPI.getAll(),
     staleTime: 24 * 60 * 60 * 1000, // 24 hours
-    initialData: {count:platforms.length, results:platforms, next:null}//platforms
+    initialData: platforms
 })
 //const usePlatforms = () => useData<Platform>('/platforms/lists/parents'); 
 
