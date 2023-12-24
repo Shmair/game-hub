@@ -1,11 +1,11 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import useGameQueryStore from "../services/store";
 
-interface Props {
-  sortOrder: string;
-  onSelectSortOrder: (sortOrder: string) => void;
-}
-const SortSelector = ({ sortOrder, onSelectSortOrder }: Props) => {
+const SortSelector = () => {
+  const sortOrder = useGameQueryStore((s) => s.sortOrder);
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+
   const sortOrders = [
     { value: "", label: "Relevance" }, // default
     { value: "-added", label: "Date added" }, // we want to show the latest so need to reverse (-) the results
@@ -25,7 +25,7 @@ const SortSelector = ({ sortOrder, onSelectSortOrder }: Props) => {
         {sortOrders.map((sortOrder) => (
           <MenuItem
             key={sortOrder.value}
-            onClick={() => onSelectSortOrder(sortOrder.value)}
+            onClick={() => setSortOrder(sortOrder.value)}
           >
             {sortOrder.label}
           </MenuItem>
