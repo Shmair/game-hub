@@ -1,4 +1,5 @@
-import useGenres, { Genre } from "./useGenres";
+import useGenres from "./useGenres";
+import { Genre } from "../entities/Genre";
 
 const useGenre = (id?:number):Genre|undefined => {
     const { data } = useGenres();
