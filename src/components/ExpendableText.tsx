@@ -2,19 +2,19 @@ import { Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 interface Prop {
-  text: string;
+  children: string;
   maxChar?: number;
 }
 
-const ExpendableText = ({ text, maxChar = 300 }: Prop) => {
+const ExpendableText = ({ children, maxChar = 300 }: Prop) => {
   const [expended, setExpended] = useState(true);
 
-  if (!text) return null;
-  if (text.length < maxChar) return <Text>{text}</Text>;
+  if (!children) return null;
+  if (children.length < maxChar) return <Text>{children}</Text>;
 
   return (
     <>
-      {expended ? text.substring(0, 300) + "..." : text}
+      {expended ? children.substring(0, 300) + "..." : children}
       {
         <Button
           size="xs"
