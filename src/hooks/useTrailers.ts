@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import ApiClient, { FetchResponse } from '../services/api-client';
 import ms from 'ms';
-import { Trailer } from '../entities/Trailer';
+import Trailer from '../entities/Trailer';
 
 
 

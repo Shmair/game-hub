@@ -1,8 +1,8 @@
-import { Platform } from './Platform';
-import {Genre} from "../entities/Genre"
-import {Publishers} from "../entities/Publishers"
+import Platform from './Platform';
+import Genre from "../entities/Genre"
+import Publishers from "../entities/Publishers"
 
-export interface Game {
+export default interface Game {
   id: number;
   slug: string;
   name: string;
