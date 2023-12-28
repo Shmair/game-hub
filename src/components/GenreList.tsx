@@ -1,5 +1,5 @@
 import useGenres from "../hooks/useGenres";
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import {
   Image,
   List,
