@@ -3,6 +3,7 @@ import GameGrid from "../components/GameGrid";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
+import GameHeading from "../components/GameHeading";
 
 const HomePage = () => (
   <Grid
@@ -22,7 +23,7 @@ const HomePage = () => (
     </Show>
     <GridItem area="main">
       <Box paddingLeft={2}>
-        <Heading />
+        <GameHeading />
         <HStack spacing={5} marginBottom={5}>
           <PlatformSelector />
           <SortSelector />
